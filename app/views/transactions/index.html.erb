@@ -1,0 +1,33 @@
+<h1>Listing transactions</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Origin</th>
+    <th>Entity</th>
+    <th>Balance date</th>
+    <th>Document number</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.date %></td>
+    <td><%= transaction.origin %></td>
+    <td><%= transaction.entity_id %></td>
+    <td><%= transaction.balance_date %></td>
+    <td><%= transaction.document_number %></td>
+    <td><%= transaction.value %></td>
+    <td><%= link_to 'Show', transaction %></td>
+    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+    <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transaction', new_transaction_path %>

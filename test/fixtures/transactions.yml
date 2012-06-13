@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2012-06-13 18:55:43
+  origin: MyString
+  entity_id: 1
+  balance_date: 2012-06-13 18:55:43
+  document_number: MyString
+  value: MyString
+
+two:
+  date: 2012-06-13 18:55:43
+  origin: MyString
+  entity_id: 1
+  balance_date: 2012-06-13 18:55:43
+  document_number: MyString
+  value: MyString
