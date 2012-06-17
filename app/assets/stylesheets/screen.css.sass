@@ -1,0 +1,48 @@
+/*
+  Welcome to Compass.
+  In this file you should write your main styles. (or centralize your imports)
+  Import this file using the following HTML or equivalent:
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+@import compass/reset
+@import columnal/grid
+
+$color1: #C2B280
+$color2: #B07484
+$color3: #89AB71
+$color4: #626087
+
+body
+  background: lighten($color1, 10%)
+  color: darken($color1, 50%)
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif
+  font-size: small
+
+section
+  +grid-container
+
+.row
+  +grid-row
+
+a
+  color: $color4
+  text-decoration: none
+
+section:first-child
+  background: darken($color1, 50%)
+  border-bottom: 1px solid darken($color1, 60%)
+  color: white
+  line-height: 5em
+  header
+    +grid(12)
+    h1
+      font-family: 'Concert One', cursive
+      font-size: xx-large
+      +grid-subcolumn(12, 6)
+    .user
+      text-align: right
+      +grid-subcolumn(12, 6)
+      +last
+
+section.content
+  border-top: 1px solid lighten($color1, 20%)

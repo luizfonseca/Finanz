@@ -7,6 +7,8 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 gem 'carrierwave'
+gem 'haml'
+gem 'omniauth-facebook'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,6 +20,8 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
+  gem "compass-columnal-plugin"
 end
 
 gem 'jquery-rails'
@@ -36,3 +40,12 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end

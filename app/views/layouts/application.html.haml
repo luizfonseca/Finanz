@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Finanz
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %link{:href => 'http://fonts.googleapis.com/css?family=Concert+One', :rel => 'stylesheet', :type => 'text/css'}
+
+  %body
+    %section
+      .row
+        %header
+          %h1 Finanz
+          .user
+            = link_to "Entrar via Facebook", "/auth/facebook" if current_user.nil?
+            = "Olá #{current_user.name}" if current_user
+  
+    %section.content
+      = yield
