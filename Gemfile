@@ -11,6 +11,8 @@ gem 'haml'
 gem 'omniauth-facebook'
 gem 'inherited_resources'
 gem "cancan"
+gem 'compass-rails'
+gem "compass-columnal-plugin"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,8 +24,6 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'compass-rails'
-  gem "compass-columnal-plugin"
 end
 
 gem 'jquery-rails'
