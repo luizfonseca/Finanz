@@ -16,3 +16,4 @@
 *.swp
 config/initializers/01_envvars.rb
 public/uploads
+config/database.yml
