@@ -193,6 +193,7 @@ DEPENDENCIES
   cancan
   carrierwave
   coffee-rails (~> 3.2.1)
+  compass (~> 0.12.alpha)
   compass-columnal-plugin
   compass-rails
   cucumber-rails

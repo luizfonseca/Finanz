@@ -11,6 +11,7 @@ gem 'haml'
 gem 'omniauth-facebook'
 gem 'inherited_resources'
 gem "cancan"
+gem 'compass', '~> 0.12.alpha'
 gem 'compass-rails'
 gem "compass-columnal-plugin"
 
