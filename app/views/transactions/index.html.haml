@@ -1,0 +1,3 @@
+= form_for @import, :multipart => true do |form|
+  = form.file_field :file
+  = form.submit "Importar", :class => "icon-upload"

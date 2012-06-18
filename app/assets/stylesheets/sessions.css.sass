@@ -1,0 +1,33 @@
+@import columnal/grid
+@import default
+
+body.sessions.new
+  section:first-child
+    display: none
+
+  h1
+    font-family: 'Concert One', cursive
+    font-size: 10em
+    text-align: center
+    +text-shadow(white 0 1px 1px)
+    +grid(12)
+    +last
+
+  h2
+    color: darken($color1, 20%)
+    font-size: 2em
+    text-align: center
+    +grid(6)
+    +grid-prefix(3)
+    +last
+    strong
+      color: darken($color1, 50%)
+      +text-shadow(white 0 1px 1px)
+
+  .login
+    text-align: center
+    +grid(6)
+    +grid-prefix(3)
+    +last
+    a
+      +btn($fb_blue)

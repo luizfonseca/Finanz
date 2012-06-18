@@ -1,7 +1,8 @@
 Finanz::Application.routes.draw do
   root :to => 'transactions#index'
-  resources :imports
-  resources :transactions
+  resources :imports, :only => [:create, :show]
+  resources :transactions, :only => [:index]
+  resources :sessions, :only => [:new]
   match '/auth/facebook/callback',   :to => 'sessions#create'
 
   # The priority is based upon order of creation:

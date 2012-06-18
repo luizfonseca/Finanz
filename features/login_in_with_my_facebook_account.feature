@@ -6,6 +6,6 @@ Feature: login in with my Facebook account
   @omniauth_test
   Scenario: 
     Given I am in the homepage
-    When I click "Entrar via Facebook"
+    When I click "Entre com a sua conta do Facebook"
     Then I should see "Olá Nícolas Iensen"
-    And I should not see the link "Entrar via Facebook"
+    And I should be in "the transactions page"

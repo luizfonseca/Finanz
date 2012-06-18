@@ -1,0 +1,23 @@
+// http://colorschemedesigner.com/#1d400aUomw0w0
+$color1: #C2B280
+$color2: #B07484
+$color3: #89AB71
+$color4: #626087
+$fb_blue: #3B5998
+
+@mixin btn($color)
+  +background-image(linear-gradient(lighten($color, 10%), $color))
+  +border-radius(.4em)
+  +box-shadow(lighten($color, 50%) 0 1px 1px inset, darken($color, 20%) 0 3px 0)
+  +text-shadow(darken($color, 50%) 0 -1px 1px)
+  display: inline-block
+  font-weight: bold
+  border: 1px solid darken($color, 20%)
+  color: white
+  padding: .75em
+  cursor: pointer
+  margin-bottom: 3px
+  &:active
+    position: relative
+    top: 2px
+    +box-shadow(lighten($color, 50%) 0 1px 1px inset, darken($color, 30%) 0 1px 0)
