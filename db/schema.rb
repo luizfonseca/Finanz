@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618183903) do
+ActiveRecord::Schema.define(:version => 20120619182748) do
 
   create_table "entities", :force => true do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20120618183903) do
   end
 
   create_table "imports", :force => true do |t|
-    t.string   "file"
+    t.text     "file"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
