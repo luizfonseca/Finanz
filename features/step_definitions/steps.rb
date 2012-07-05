@@ -27,9 +27,7 @@ When /^I press "(.*?)"$/ do |arg1|
 end
 
 Then /^I should be in "(.*?)"$/ do |arg1|
-  if arg1 == "this import page"
-    current_path.should be_== import_path(Import.first)
-  elsif
+  if "the transactions page"
     current_path.should be_== transactions_path
   else
     raise "I don't know #{arg1}"

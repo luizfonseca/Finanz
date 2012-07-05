@@ -9,7 +9,7 @@ class ImportsController < InheritedResources::Base
 
   def create
     create! do |success, failure|
-      success.html { redirect_to import_path(@import), :notice => "#{@import.transactions.count} transações criadas" }
+      success.html { redirect_to transactions_path, :notice => "#{@import.transactions.count} novas transações" }
     end
   end
 end

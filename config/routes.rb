@@ -1,6 +1,6 @@
 Finanz::Application.routes.draw do
   root :to => 'transactions#index'
-  resources :imports, :only => [:create, :show]
+  resources :imports, :only => [:create]
   resources :transactions, :only => [:index]
   resources :sessions, :only => [:new]
   match '/auth/facebook/callback',   :to => 'sessions#create'

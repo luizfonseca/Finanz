@@ -8,5 +8,4 @@ Feature: import my financial transactions
     Given I am logged in
     And I attach a file with 83 transactions into the form
     When I press "Importar"
-    Then I should be in "this import page"
-    And I should see "83 transações criadas"
+    Then I should see "83 novas transações"

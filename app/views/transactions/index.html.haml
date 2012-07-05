@@ -1,3 +1,9 @@
 = form_for @import, :multipart => true do |form|
   = form.file_field :file
   = form.submit "Importar", :class => "icon-upload"
+
+%table
+  - current_user.transactions.where("entity_id IS NOT NULL").group(:entity_id).sum(:value).sort{|x, y| x[1]<=>y[1]}[0..9].map{|x| [Entity.find(x[0]), x[1]]}.each do |entity|
+    %tr
+      %td= entity[0].name
+      %td= number_to_currency entity[1]

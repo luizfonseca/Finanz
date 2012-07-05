@@ -14,7 +14,7 @@ class Import < ActiveRecord::Base
       history = parse_history row[2]
       entity = history[:entity_name] ? Entity.find_or_create_by_name(history[:entity_name]) : nil
       regex2 = /(\d{2})\/(\d{2})\/(\d{4})/
-      date = history[:date] ? history[:date] : Time.parse("#{row[0][regex2, 2]}/#{row[0][regex2, 1]}/#{row[0][regex2, 3]}")
+      date = Time.parse("#{row[0][regex2, 2]}/#{row[0][regex2, 1]}/#{row[0][regex2, 3]} #{history[:hour]}")
       Transaction.create(
         :date => date, 
         :entity => entity, 
@@ -28,7 +28,7 @@ class Import < ActiveRecord::Base
 
   def parse_history history
     entity_name = history[/[\d]+[\s]+([A-Z][A-Z0-9\s]+)/, 1]
-    {:entity_name => entity_name ? entity_name.titleize : nil}
+    {:entity_name => entity_name ? entity_name.titleize : nil, :hour => history[/\d\d:\d\d/]}
   end
 
 end
