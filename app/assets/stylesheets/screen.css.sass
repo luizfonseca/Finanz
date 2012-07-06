@@ -59,9 +59,25 @@ strong
   font-weight: bold
 
 h1
+  font-family: 'Concert One', cursive
   font-size: xx-large
   margin-bottom: .5em
 
 h2
+  font-family: 'Concert One', cursive
   font-size: x-large
   margin-bottom: .5em
+  +text-shadow(white 0 1px 1px)
+
+table
+  tr
+    &:nth-child(even)
+      background: rgba(255,255,255,.25)
+    &:nth-child(odd)
+      background: rgba(255,255,255,.5)
+  td
+    padding: .25em
+
+label
+  font-weight: bold
+  cursor: pointer

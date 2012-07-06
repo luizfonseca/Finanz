@@ -203,5 +203,8 @@ pt-BR:
     errors:
       <<: *errors
   activerecord:
+    attributes:
+      import:
+        file: "Escolha um arquivo CSV do Banco do Brasil"
     errors:
       <<: *errors
