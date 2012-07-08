@@ -11,6 +11,7 @@ gem 'haml'
 gem 'omniauth-facebook'
 gem 'inherited_resources'
 gem "cancan"
+gem 'machinist', '>= 2.0.0.beta2'
 
 # Gems used only for assets and not required
 # in production environments by default.

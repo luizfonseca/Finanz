@@ -4,6 +4,13 @@
   = form.file_field :file
   = form.submit "Importar", :class => "btn"
 
+.brief_summary
+  %h2 Resumo deste mês:
+  .incoming
+    %span= number_to_currency current_user.transactions.incoming.this_month.sum(:value)
+  .outgoing
+    %span= number_to_currency current_user.transactions.outgoing.this_month.sum(:value)
+
 .most_spended_entities
   %h2 Lugares onde se gasta mais
   %table
