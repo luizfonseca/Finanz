@@ -7,11 +7,14 @@
 .brief_summary
   %h2 Resumo deste mês:
   .incoming
-    %span= number_to_currency current_user.transactions.incoming.this_month.sum(:value)
+    %span.icon-box-add
+      = number_to_currency current_user.transactions.incoming.this_month.sum(:value)
   .outgoing
-    %span= number_to_currency current_user.transactions.outgoing.this_month.sum(:value)
+    %span.icon-box-remove
+      = number_to_currency current_user.transactions.outgoing.this_month.sum(:value)
 
 .most_spended_entities
+  %hr
   %h2 Lugares onde se gasta mais
   %table
     - current_user.transactions.where("entity_id IS NOT NULL").group(:entity_id).sum(:value).sort{|x, y| x[1]<=>y[1]}[0..9].map{|x| [Entity.find(x[0]), x[1]]}.each_with_index do |entity, i|
