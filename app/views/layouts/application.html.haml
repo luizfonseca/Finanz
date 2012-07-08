@@ -13,7 +13,10 @@
         %header
           %h1 Finanz
           .user= "Olá #{current_user.name}" if current_user
+    - if notice
+      %section.flash
+        .row
+          .notice= notice
     %section
       .row
-        .notice= notice if notice
         .content= yield

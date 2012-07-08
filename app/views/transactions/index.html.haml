@@ -1,4 +1,5 @@
 = form_for @import, :multipart => true do |form|
+  %h2 Nova importação
   = form.label :file
   = form.file_field :file
   = form.submit "Importar", :class => "btn"
