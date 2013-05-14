@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705030156) do
+ActiveRecord::Schema.define(:version => 20130514141018) do
 
   create_table "entities", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120705030156) do
     t.integer  "import_id"
     t.text     "description"
     t.float    "value"
+    t.string   "key"
   end
 
   create_table "users", :force => true do |t|
