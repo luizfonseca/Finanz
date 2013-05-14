@@ -4,21 +4,34 @@
   = form.file_field :file
   = form.submit "Importar", :class => "btn"
 
-.brief_summary
-  %h2 Resumo deste mês:
-  .incoming
-    %span.icon-box-add
-      = number_to_currency current_user.transactions.incoming.this_month.sum(:value)
-  .outgoing
-    %span.icon-box-remove
-      = number_to_currency current_user.transactions.outgoing.this_month.sum(:value)
+.charts
+  .brief_summary
+    %h2 Resumo deste mês:
+    .incoming
+      %span.icon-box-add
+        = number_to_currency current_user.transactions.incoming.this_month.sum(:value)
+    .outgoing
+      %span.icon-box-remove
+        = number_to_currency current_user.transactions.outgoing.this_month.sum(:value)
+    .clear
+    %hr
+  
+  .monthly_expenses
+    %h2 Meses anteriores:
+    %table
+      %tr
+        - 6.downto(1) do |i|
+          %th= (Date.today - i.month).strftime("%b %y")
+      %tr
+        - 6.downto(1) do |i|
+          %td= current_user.transactions.outgoing.by_month((Date.today - i.month).month, (Date.today - i.month).year).sum(:value)
+    %hr
 
-.most_spended_entities
-  %hr
-  %h2 Lugares onde se gasta mais
-  %table
-    - current_user.transactions.where("entity_id IS NOT NULL").group(:entity_id).sum(:value).sort{|x, y| x[1]<=>y[1]}[0..9].map{|x| [Entity.find(x[0]), x[1]]}.each_with_index do |entity, i|
-      %tr{:class => "rank_#{i}"}
-        %td= "##{i + 1}"
-        %td= entity[0].name
-        %td= number_to_currency entity[1]
+  .most_spended_entities
+    %h2 Lugares onde se gasta mais
+    %table
+      - current_user.transactions.where("entity_id IS NOT NULL").group(:entity_id).sum(:value).sort{|x, y| x[1]<=>y[1]}[0..9].map{|x| [Entity.find(x[0]), x[1]]}.each_with_index do |entity, i|
+        %tr{:class => "rank_#{i}"}
+          %td= "##{i + 1}"
+          %td= entity[0].name
+          %td= number_to_currency entity[1]

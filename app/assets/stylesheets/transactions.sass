@@ -1,30 +1,41 @@
 body.transactions.index
   form
     +grid(6)
-  .brief_summary
+  .charts
     +grid(6)
     +last
-    .incoming, .outgoing
-      span
-        font-size: x-large
-        display: block
-        padding: .25em
-        color: white
-        text-align: center
-        +border-radius(1em)
-    .incoming
-      +grid-subcolumn(6, 3)
-      span
-        background: $color3
-        border: 1px dashed darken($color3, 20%)
-    .outgoing
-      +grid-subcolumn(6, 3)
-      +last
-      span
-        background: $color2
-        border: 1px dashed darken($color2, 20%)
-  .most_spended_entities
-    +grid(6)
-    +last
-    table
-      width: 100%
+    .brief_summary
+      .incoming, .outgoing
+        span
+          font-size: x-large
+          display: block
+          padding: .25em
+          color: white
+          text-align: center
+          +border-radius(1em)
+      .incoming
+        +grid-subcolumn(6, 3)
+        span
+          background: $color3
+          border: 1px dashed darken($color3, 20%)
+      .outgoing
+        +grid-subcolumn(6, 3)
+        +last
+        span
+          background: $color2
+          border: 1px dashed darken($color2, 20%)
+    .most_spended_entities
+      table
+        width: 100%
+    .monthly_expenses
+      table
+        width: 100%
+        td, th
+          text-align: center
+          &:nth-child(even)
+            background: lighten($color3, 10%)
+        th
+          font-size: 18px
+        td
+          &:nth-child(even)
+            background: $color3
