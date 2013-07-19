@@ -6,6 +6,6 @@ Feature: import my financial transactions
   @omniauth_test
   Scenario: 
     Given I am logged in
-    And I attach a file with 83 transactions into the form
+    And I attach a file with 97 transactions into the form
     When I press "Importar"
-    Then I should see "83 novas transações"
+    Then I should see "97 novas transações"

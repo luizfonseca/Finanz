@@ -7,7 +7,7 @@ Given /^I am logged in$/ do
   @current_user = User.find_by_email("nicolas@engage.is")
 end
 
-Given /^I attach a file with 83 transactions into the form$/ do
+Given /^I attach a file with 97 transactions into the form$/ do
   attach_file "import[file]", "#{Rails.root}/features/support/financial.csv"
 end
 
